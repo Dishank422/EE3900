@@ -30,4 +30,4 @@ plt.xlabel('$n$')
 plt.ylabel('$y(n)$')
 plt.grid()# minor
 
-plt.savefig('figs/xnyn.png')
+plt.savefig('xnyn.png')
