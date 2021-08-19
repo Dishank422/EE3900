@@ -7,7 +7,7 @@ import numpy as np
 
 import os
 import sys
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
+sys.path.insert(1, os.path.join(sys.path[0], '../..'))
 from coeffs import *
 
 #creating x,y for 3D plotting
@@ -27,7 +27,6 @@ x_AB = line_gen(A,B)
 x_BC = line_gen(B,C)
 x_CA = line_gen(C,A)
 
-
 #plotting line
 plt.plot(x_AB[0,:],x_AB[1,:],x_AB[2,:],label="AB")
 plt.plot(x_BC[0,:],x_BC[1,:],x_BC[2,:],label="BC")
@@ -41,7 +40,7 @@ ax.text(1,-2,-8, "A", color='red')
 ax.text(5,0,-2, "B", color='red')
 ax.text(11,3,7, "C", color='red')
 
-#show plot
+#save plot
 plt.xlabel('$x$');plt.ylabel('$y$')
 plt.legend(loc='best');plt.grid()
-plt.show()
+plt.savefig('../figures/figure.png')
