@@ -123,7 +123,7 @@ columns=fullflexible
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
 \title{ASSIGNMENT 1}
-\author{Dishank Jain\\ AI20BTECH11011}
+\author{Dishank Jain \\ AI20BTECH11011}
 \maketitle
 \newpage
 \bigskip
@@ -180,8 +180,14 @@ Thus $\vec{A}$, $\vec{B}$ and $\vec{C}$ are collinear.
 Let $\vec{B}$ divide AC in the ratio $\lambda$ : 1. 
 
 \begin{align}
-    \implies \vec{B} - \vec{A} &= \lambda\; (\vec{C} - \vec{B})\\
-    \implies \begin{pmatrix} 4 & 2 & 6\end{pmatrix} &= \lambda\; \begin{pmatrix} 6 & 3 & 9\end{pmatrix}\\
+    \implies \dfrac{\lambda}{1} &= \dfrac{AB}{BC}\\
+    \implies \norm{\vec{B} - \vec{A}} &= \lambda\; \norm{\vec{C} - \vec{B}}
+\end{align}
+\begin{equation}
+    \vec{B} - \vec{A} = \myvec{4\\2\\6}, \vec{C} - \vec{B} = \myvec{6\\3\\9}
+\end{equation}
+\begin{align}
+    \implies 2\sqrt{14} &= \lambda \times 3\sqrt{14}\\
     \implies \lambda &= \dfrac{2}{3}
 \end{align}
 
