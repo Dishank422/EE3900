@@ -142,7 +142,25 @@ https://github.com/Dishank422/EE3900/blob/main/assignment3_elegant/Assignment3.t
 %
 \section{Constructions Q2.4}
 Construct a quadrilateral ABCD such that BC = 4.5, AC = 5.5, CD = 5, BD = 7  and AD = 5.5.
+
 \section{Solution}
+\begin{lemma}
+In triangle XYZ, if the \ref{1}-\ref{5} hold, 
+\begin{align}
+    XY &= z\label{1}\\
+    YZ &= x\label{2}\\
+    XZ &= y\label{3}\\
+    \vec{X} &= \myvec{0\\0}\label{4}\\
+    \vec{Y} &= \myvec{z\\0}\label{5}
+\end{align}
+then 
+\begin{align}
+    \vec{Z} &= \myvec{m\\ \pm n}\\
+    where\; m &= \dfrac{XY^2+XZ^2-YZ^2}{2\times XY}\\
+    n &= \sqrt{(XZ^2-m^2)}
+\end{align}
+\end{lemma}
+Note: The proof for above can be found in the manual (problem 1.3).
 Using AC = 5.5,
 \begin{align}
     Let\; \vec{A} = \myvec{0\\0},\; &\vec{C} = \myvec{5.5\\0}\\
