@@ -45,5 +45,3 @@ plt.xlabel('$x$');plt.ylabel('$y$')
 plt.legend(loc='best');
 plt.grid()
 plt.savefig('../figures/figure.png')
-print(np.linalg.norm(B-D))
-print(np.linalg.norm(B-C))
