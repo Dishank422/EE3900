@@ -1,0 +1,123 @@
+\documentclass[9pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\pgfplotsset{compat = 1.9}
+\usetheme{Boadilla}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\title{Gate Assignment 1}
+\author{Dishank - AI20BTECH11011}
+\date{}
+
+\begin{document}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Question}
+Let the state-space representation on an LTI system be $\dot{x}(t) = Ax(t)+Bu(t)$, $y(t)=Cx(t)+du(t)$ where A,B,C are matrices,  d is a scalar, u(t) is the input to the system, and y(t) is its output. Let $B = \myvec{ 0 & 0 &  1}^\top$ and $d = 0$. Which one of the following options for A and C will ensure that the transfer function of this LTI system is 
+
+\begin{equation}
+    H(s) = \dfrac{1}{s^3+3s^2+2s+1}
+\end{equation}
+
+\begin{enumerate}[A]
+    \item $A = \myvec{
+     0 &  1 &  0\\ 
+     0 &  0 &  1\\
+    -1 & -2 & -3
+    }$ and $C = \myvec{1 & 0 & 0}$
+    \item $A = \myvec{
+     0 &  1 &  0\\ 
+     0 &  0 &  1\\
+    -3 & -2 & -1
+    }$ and $C = \myvec{1 & 0 & 0}$
+    \item $A = \myvec{
+     0 &  1 &  0\\ 
+     0 &  0 &  1\\
+    -1 & -2 & -3
+    }$ and $C = \myvec{0 & 0 & 1}$
+    \item $A = \myvec{
+     0 &  1 &  0\\ 
+     0 &  0 &  1\\
+    -3 & -2 & -1
+    }$ and $C = \myvec{0 & 0 & 1}$
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Laplace transform}
+    
+    \begin{equation}
+        Assumption: \; x(t) = 0\; at\; t=0
+    \end{equation}
+    \begin{align}
+        \mathcal{L}(x(t)) = X(s) &= \int_{0}^{\infty}x(t)e^{-st}dt\\
+        \implies \mathcal{L}(\dot{x}(t)) &= \int_{0}^{\infty}\dot{x}(t)e^{-st}dt\\
+                                         &= e^{-st}x(t)\big \lvert_{0}^{\infty} + \int_{0}^{\infty}sx(t)e^{-st}dt\\
+                                         &= -x(0)+sX(s)\\
+                                         &= sX(s)
+    \end{align}
+\end{frame}
+
+\begin{frame}{Solution}
+    We are given 
+\begin{equation}
+    \myvec{\dot{x}(t)\\y(t)} = \myvec{A & B\\C & d}\myvec{x(t)\\u(t)}
+\end{equation}
+    
+Taking Laplace transform on both sides,
+\begin{align}
+    \myvec{sX(s)\\Y(s)} &= \myvec{A & B\\ C & d}\myvec{X(s)\\U(s)}\\
+    \implies sX(s) &= AX(s)+BU(s)\\
+    \implies X(s) &= (sI-A)^{-1} BU(s)\\
+    \implies Y(s) &= CX(s)+dU(s)\\ 
+                  &= C(sI-A)^{-1} BU(s) +dU(s)
+\end{align}
+By definition, 
+\begin{align}
+    Y(s) &= H(s)U(s)\\
+    \implies H(s) &= C(sI-A)^{-1} B + d\\
+                  &= \dfrac{1}{s^3+3s^2+2s+1}
+\end{align} 
+\begin{equation}
+    \implies C(sI-A)^{-1} B + d = \dfrac{1}{s^3+3s^2+2s+1}\label{result}
+\end{equation}
+
+\end{frame}
+
+\begin{frame}{Solution Contd.}
+    Now we substitute A and C from each option into eq. \ref{result} and verify if H(s) is the same as we require. 
+\begin{enumerate}[A]
+    \item \begin{equation}
+        C(sI-A)^{-1} B +d = \dfrac{1}{s^3+3s^2+2s+1}
+    \end{equation}
+    \item \begin{equation}
+        C(sI-A)^{-1} B +d = \dfrac{1}{s^3+1s^2+2s+3}
+    \end{equation}    
+    \item \begin{equation}
+        C(sI-A)^{-1} B +d = \dfrac{s^2}{s^3+3s^2+2s+1}
+    \end{equation}
+    \item \begin{equation}
+        C(sI-A)^{-1} B +d = \dfrac{s^2}{s^3+1s^2+2s+3}
+    \end{equation}
+\end{enumerate}
+
+Hence only option A is the correct option. For above calculations, refer https://github.com/Dishank422/EE3900/blob/main/Gate-Assignment1/codes/codes.py
+\end{frame}
+
+\end{document}
+
