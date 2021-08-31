@@ -151,10 +151,10 @@ Let $\vec{X} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
 \end{equation}
 XR is perpendicular to y-axis.
 \begin{align}
-    \implies &(\vec{R} - \vec{X})\cdot \vec{R} = 0\\
-    \implies &\vec{X}\cdot \vec{R} = \norm{\vec{R}}^2\label{RelXR}\\
-    \implies &\vec{X}\cdot \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
-    \implies &\norm{\vec{R}} = \vec{X}\cdot \myvec{0\\1}
+    \implies &(\vec{R} - \vec{X})^\top \vec{R} = 0\\
+    \implies &\vec{X}^\top \vec{R} = \norm{\vec{R}}^2\label{RelXR}\\
+    \implies &\vec{X}^\top \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
+    \implies &\norm{\vec{R}} = \vec{X}^\top \myvec{0\\1}
 \end{align}
 
 Let $\vec{C} = \myvec{2\\1}$. Then
@@ -166,13 +166,13 @@ Let $\vec{C} = \myvec{2\\1}$. Then
 We are given XR = XC.  
 \begin{align}
     \implies &\norm{\vec{X} - \vec{C}}^2 = \norm{\vec{X} - \vec{R}}^2\\ 
-    \implies &\norm{\vec{X}}^2+\norm{\vec{C}}^2-2\vec{X}\cdot \vec{C} = \norm{\vec{X}}^2+\norm{\vec{R}}^2-2\vec{X}\cdot \vec{R}
+    \implies &\norm{\vec{X}}^2+\norm{\vec{C}}^2-2\vec{X}^\top \vec{C} = \norm{\vec{X}}^2+\norm{\vec{R}}^2-2\vec{X}^\top \vec{R}
 \end{align}
 Subtracting $\norm{\vec{X}}^2$ on both sides and using \ref{RelXR},
 \begin{align}
-    \norm{\vec{C}}^2-2\vec{X}\cdot \vec{C} &= \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
-    \implies 2\vec{X}\cdot \vec{C} &= \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
-    \implies 2\vec{X}\cdot \vec{C} &= \norm{\vec{C}}^2+\myvec{\vec{X}\cdot \myvec{0\\1}}^2\\
+    \norm{\vec{C}}^2-2\vec{X}^\top \vec{C} &= \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
+    \implies 2\vec{X}^\top \vec{C} &= \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
+    \implies 2\vec{X}^\top \vec{C} &= \norm{\vec{C}}^2+\myvec{\vec{X}^\top \myvec{0\\1}}^2\\
     \implies 2(2x+y) &= 5 + y^2\\
     \implies y^2 &= 4x + 2y - 5\label{locus}
 \end{align}
