@@ -145,33 +145,35 @@ https://github.com/Dishank422/EE3900/blob/main/assignment4/Assignment4.tex
 A point moves so that it's distance from the y-axis is equal to the distance from the point $\myvec{2\\1}$. Find the equation of the locus. 
 
 \section{Solution}
-Let $\vec{A} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
+Let $\vec{X} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
 \begin{equation}
     \vec{R} = \lambda \myvec{0\\1}
 \end{equation}
-AR is perpendicular to y-axis.
+XR is perpendicular to y-axis.
 \begin{align}
-    \implies &(\vec{R} - \vec{A})\cdot \vec{R} = 0\\
-    \implies &(\lambda - y)\times \lambda = 0\\
-    \implies &\lambda = y
-\end{align}
-
-\begin{align}
-    AR &= \norm{\vec{A} - \vec{R}}\\
-       &= \sqrt{((x-0)^2+(y-y)^2)}\\
-       &= x
+    \implies &(\vec{R} - \vec{X})\cdot \vec{R} = 0\\
+    \implies &\vec{X}\cdot \vec{R} = \norm{\vec{R}}^2\label{RelXR}\\
+    \implies &\vec{X}\cdot \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
+    \implies &\norm{\vec{R}} = \vec{X}\cdot \myvec{0\\1}
 \end{align}
 
 Let $\vec{C} = \myvec{2\\1}$. Then
 \begin{align}
-    AC &= \norm{\vec{A} - \vec{C}}\\ 
-       &= \sqrt{((x-2)^2+(y-1)^2)}
+     XC &= \norm{\vec{X} - \vec{C}}\\
+     XR &= \norm{\vec{X} - \vec{R}}
 \end{align}
 
-We are given AR = AC.  
+We are given XR = XC.  
 \begin{align}
-    \implies x &= \sqrt{((x-2)^2+(y-1)^2)}\\
-    \implies x^2 &= x^2-4x+4+y^2-2y+1\\
+    \implies &\norm{\vec{X} - \vec{C}}^2 = \norm{\vec{X} - \vec{R}}^2\\ 
+    \implies &\norm{\vec{X}}^2+\norm{\vec{C}}^2-2\vec{X}\cdot \vec{C} = \norm{\vec{X}}^2+\norm{\vec{R}}^2-2\vec{X}\cdot \vec{R}
+\end{align}
+Subtracting $\norm{\vec{X}}^2$ on both sides and using \ref{RelXR},
+\begin{align}
+    \norm{\vec{C}}^2-2\vec{X}\cdot \vec{C} &= \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
+    \implies 2\vec{X}\cdot \vec{C} &= \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
+    \implies 2\vec{X}\cdot \vec{C} &= \norm{\vec{C}}^2+\myvec{\vec{X}\cdot \myvec{0\\1}}^2\\
+    \implies 2(2x+y) &= 5 + y^2\\
     \implies y^2 &= 4x + 2y - 5\label{locus}
 \end{align}
 
