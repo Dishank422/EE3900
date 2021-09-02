@@ -145,36 +145,37 @@ https://github.com/Dishank422/EE3900/blob/main/assignment4/Assignment4.tex
 A point moves so that it's distance from the y-axis is equal to the distance from the point $\myvec{2\\1}$. Find the equation of the locus. 
 
 \section{Solution}
-Let $\vec{X} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
+Let $\vec{x} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
 \begin{equation}
     \vec{R} = \lambda \myvec{0\\1}
 \end{equation}
-XR is perpendicular to y-axis.
+$xR$ is perpendicular to y-axis.
 \begin{align}
-    \implies &(\vec{R} - \vec{X})^\top \vec{R} = 0\\
-    \implies &\vec{X}^\top \vec{R} = \norm{\vec{R}}^2\label{RelXR}\\
-    \implies &\vec{X}^\top \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
-    \implies &\norm{\vec{R}} = \vec{X}^\top \myvec{0\\1}
+    \implies &(\vec{R} - \vec{x})^\top \vec{R} = 0\\
+    \implies &\vec{x}^\top \vec{R} = \norm{\vec{R}}^2\label{RelxR}\\
+    \implies &\vec{x}^\top \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
+    \implies &\norm{\vec{R}} = \vec{x}^\top \myvec{0\\1}
 \end{align}
 
 Let $\vec{C} = \myvec{2\\1}$. Then
 \begin{align}
-     XC &= \norm{\vec{X} - \vec{C}}\\
-     XR &= \norm{\vec{X} - \vec{R}}
+     xC &= \norm{\vec{x} - \vec{C}}\\
+     xR &= \norm{\vec{x} - \vec{R}}
 \end{align}
 
-We are given XR = XC.  
+We are given $xR = xC$.  
 \begin{align}
-    \implies &\norm{\vec{X} - \vec{C}}^2 = \norm{\vec{X} - \vec{R}}^2\\ 
-    \implies &\norm{\vec{X}}^2+\norm{\vec{C}}^2-2\vec{X}^\top \vec{C} = \norm{\vec{X}}^2+\norm{\vec{R}}^2-2\vec{X}^\top \vec{R}
+    \implies &\norm{\vec{x} - \vec{C}}^2 = \norm{\vec{x} - \vec{R}}^2\\ 
+    \implies &\norm{\vec{x}}^2+\norm{\vec{C}}^2-2\vec{x}^\top \vec{C} = \norm{\vec{x}}^2+\norm{\vec{R}}^2-2\vec{x}^\top \vec{R}
 \end{align}
-Subtracting $\norm{\vec{X}}^2$ on both sides and using \ref{RelXR},
+Subtracting $\norm{\vec{x}}^2$ on both sides and using \ref{RelxR},
 \begin{align}
-    \norm{\vec{C}}^2-2\vec{X}^\top \vec{C} &= \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
-    \implies 2\vec{X}^\top \vec{C} &= \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
-    \implies 2\vec{X}^\top \vec{C} &= \norm{\vec{C}}^2+\myvec{\vec{X}^\top \myvec{0\\1}}^2\\
-    \implies 2(2x+y) &= 5 + y^2\\
-    \implies y^2 &= 4x + 2y - 5\label{locus}
+    &\norm{\vec{C}}^2-2\vec{x}^\top \vec{C} = \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
+    \implies &2\vec{x}^\top \vec{C} = \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
+    \implies &2\vec{x}^\top \vec{C} = \norm{\vec{C}}^2+\myvec{\vec{x}^\top \myvec{0\\1}}^2\\
+    \implies &\vec{x}^\top \myvec{0\\1} \myvec{0 & 1} \vec{x} - 2\vec{x}^\top \vec{C} + \norm{\vec{C}}^2 = 0\\
+    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\vec{x}^\top(- \vec{C}) + \norm{\vec{C}}^2 = 0\\
+    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\vec{x}^\top\myvec{-2\\-1} + 5 = 0\label{locus}
 \end{align}
 
 Therefore \ref{locus} is the required locus. 
