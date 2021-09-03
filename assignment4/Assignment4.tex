@@ -172,10 +172,10 @@ Subtracting $\norm{\vec{x}}^2$ on both sides and using \ref{RelxR},
 \begin{align}
     &\norm{\vec{C}}^2-2\vec{x}^\top \vec{C} = \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
     \implies &2\vec{x}^\top \vec{C} = \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
-    \implies &2\vec{x}^\top \vec{C} = \norm{\vec{C}}^2+\myvec{\vec{x}^\top \myvec{0\\1}}^2\\
-    \implies &\vec{x}^\top \myvec{0\\1} \myvec{0 & 1} \vec{x} - 2\vec{x}^\top \vec{C} + \norm{\vec{C}}^2 = 0\\
-    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\vec{x}^\top(- \vec{C}) + \norm{\vec{C}}^2 = 0\\
-    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\vec{x}^\top\myvec{-2\\-1} + 5 = 0\label{locus}
+    \implies &2\vec{C}^\top \vec{x} = \norm{\vec{C}}^2+\myvec{\vec{x}^\top \myvec{0\\1}}^2\\
+    \implies &\vec{x}^\top \myvec{0\\1} \myvec{0 & 1} \vec{x} - 2\vec{C}^\top \vec{x} + \norm{\vec{C}}^2 = 0\\
+    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2(-\vec{C})^\top\vec{x} + \norm{\vec{C}}^2 = 0\\
+    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\myvec{-2&-1}\vec{x} + 5 = 0\label{locus}
 \end{align}
 
 Therefore \ref{locus} is the required locus. 
