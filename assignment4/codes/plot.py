@@ -1,21 +1,3 @@
-"""
-import numpy as np
-import matplotlib.pyplot as plt
-fig = plt.plot()
-
-y, x = np.ogrid[-3:5:1000j, -4:8:1000j]
-plt.contour(
-    x.ravel(), y.ravel(), y**2 - 4*x -2*y + 5, [0])
-plt.grid()
-plt.xlabel("x")
-plt.ylabel("y")
-plt.savefig("../figures/figure.png")
-
-def parab_gen(y,a):
-	x = y**2/a
-	return x
-"""
-
 import numpy as np
 import matplotlib.pyplot as plt
 from numpy import linalg as LA
@@ -56,6 +38,7 @@ xStandardparab = np.vstack((x,y))
 xActualparab = P@xStandardparab + c[:,np.newaxis]
 
 plt.plot(xActualparab[0,:],xActualparab[1,:],label='Given Parabola',color='r')
+plt.plot(xStandardparab[0,:],xStandardparab[1,:],label='Standard Parabola',color='b')
 
 plt.xlabel('$x$')
 plt.ylabel('$y$')
