@@ -122,7 +122,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{ASSIGNMENT 4}
+\title{ASSIGNMENT 5}
 \author{Dishank Jain \\ AI20BTECH11011}
 \maketitle
 \newpage
@@ -132,87 +132,67 @@ columns=fullflexible
 Download all python codes from
 %
 \begin{lstlisting}
-https://github.com/Dishank422/EE3900/blob/main/assignment4/codes
+https://github.com/Dishank422/EE3900/blob/main/assignment5/codes
 \end{lstlisting}
 % 
 and latex-tikz codes from 
 %
 \begin{lstlisting}
-https://github.com/Dishank422/EE3900/blob/main/assignment4/Assignment4.tex
+https://github.com/Dishank422/EE3900/blob/main/assignment5/Assignment5.tex
 \end{lstlisting}
 %
-\section{Ramsey 1.2 Loci Q 4}
-A point moves so that it's distance from the y-axis is equal to the distance from the point $\myvec{2\\1}$. Find the equation of the locus. 
+\section{Quadratic forms Q 2.68}
+Find the normal at the point $\myvec{1\\1}$ on the curve $2y+x^2=3$.
 
 \section{Solution}
-Let $\vec{x} = \myvec{x\\y}$ be the point. The equation of y-axis is given by
+The given curve can be expressed as 
+\begin{align}
+    &x^2+2y-3=0\\
+    \implies \vec{V} = &\myvec{1&0\\0&0},\; \vec{u} = \myvec{0\\1},\; \vec{f} = -3
+\end{align}
+
+Since $\abs{\vec{V}} = 0$, the given curve represents a parabola. The eigenvalues are given by 
 \begin{equation}
-    \vec{R} = \lambda \myvec{0\\1}
-\end{equation}
-$xR$ is perpendicular to y-axis.
-\begin{align}
-    \implies &(\vec{R} - \vec{x})^\top \vec{R} = 0\\
-    \implies &\vec{x}^\top \vec{R} = \norm{\vec{R}}^2\label{RelxR}\\
-    \implies &\vec{x}^\top \myvec{0\\1}\norm{\vec{R}} = \norm{\vec{R}}^2\\
-    \implies &\norm{\vec{R}} = \vec{x}^\top \myvec{0\\1}
-\end{align}
-
-Let $\vec{C} = \myvec{2\\1}$. Then
-\begin{align}
-     xC &= \norm{\vec{x} - \vec{C}}\\
-     xR &= \norm{\vec{x} - \vec{R}}
-\end{align}
-
-We are given $xR = xC$.  
-\begin{align}
-    \implies &\norm{\vec{x} - \vec{C}}^2 = \norm{\vec{x} - \vec{R}}^2\\ 
-    \implies &\norm{\vec{x}}^2+\norm{\vec{C}}^2-2\vec{x}^\top \vec{C} = \norm{\vec{x}}^2+\norm{\vec{R}}^2-2\vec{x}^\top \vec{R}
-\end{align}
-Subtracting $\norm{\vec{x}}^2$ on both sides and using \ref{RelxR},
-\begin{align}
-    &\norm{\vec{C}}^2-2\vec{x}^\top \vec{C} = \norm{\vec{R}}^2 - 2\norm{\vec{R}}^2\\
-    \implies &2\vec{x}^\top \vec{C} = \norm{\vec{C}}^2+\norm{\vec{R}}^2\\
-    \implies &2\vec{C}^\top \vec{x} = \norm{\vec{C}}^2+\myvec{\vec{x}^\top \myvec{0\\1}}^2\\
-    \implies &\vec{x}^\top \myvec{0\\1} \myvec{0 & 1} \vec{x} - 2\vec{C}^\top \vec{x} + \norm{\vec{C}}^2 = 0\\
-    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2(-\vec{C})^\top\vec{x} + \norm{\vec{C}}^2 = 0\\
-    \implies &\vec{x}^\top \myvec{0&0\\0&1}\vec{x} + 2\myvec{-2&-1}\vec{x} + 5 = 0\\
-    \implies &\vec{V} = \myvec{0&0\\0&1},\; \vec{u} = \myvec{-2\\-1},\; f = 5
-\end{align}
-
-For obtaining the affine transformation, we use 
-\begin{equation}
-    \vec{x} = \vec{P}\vec{y}+\vec{c}
+    \lambda_1 = 0, \; \lambda_2 = 1
 \end{equation}
 
-The corresponding eigenvalues of $\vec{V}$ are
+with corresponding eigenvectors 
 \begin{align}
-    \lambda_1 = 0,\; \lambda_2 = 1\\
-    \implies \vec{D} = \myvec{0&0\\0&1}
+    \myvec{1&0\\0&0}\vec{x} = 0 \implies \vec{p}_1 = \myvec{0\\1}\\
+    \myvec{0&0\\0&-1}\vec{x} = 0 \implies \vec{p}_2 = \myvec{1\\0}
 \end{align}
 
-The corresponding eigenvectors are
+To find the vertex of the parabola,
+\begin{equation}
+    \myvec{\vec{u}^\top+\kappa \vec{p}_1^\top\\\vec{V}}\vec{c} = \myvec{-\vec{f}\\\kappa \vec{p}_1-\vec{u}}
+\end{equation}
+
+where, $\kappa = \vec{u}^\top\vec{p}_1 = 1$
 \begin{align}
-    &\vec{p}_1 = \myvec{1\\0},\; \vec{p}_2 = \myvec{0\\1}\\
-    \implies &\vec{P} = \myvec{\vec{p}_1 & \vec{p}_2} = \myvec{1&0\\0&1}
+    \implies \myvec{0&2\\1&0\\0&0}\vec{c} &= \myvec{3\\0\\0}\\
+    \implies \vec{c} &= \myvec{0\\1.5}
 \end{align}
 
-Since $\abs{\vec{V}} = 0$,
+Now to evaluate the direction vector $\vec{m}$,
 \begin{align}
-    \myvec{\vec{u}^\top+\eta \vec{p}_1^\top\\\vec{V}}\vec{c} &= \myvec{-f\\\eta \vec{p}_1-\vec{u}}\\
-    \eta &= \vec{u}^\top \vec{p}_1\\
-    \implies \eta &= -2\\
-    \implies \myvec{-4&-1\\0&0\\0&1}\vec{c} &= \myvec{-5\\0\\1}\\
-    \implies \vec{c} &= \myvec{1\\1}
+    \vec{m}^\top (\vec{V}\vec{q}+\vec{u}) &= 0\\
+    \implies \vec{m}^\top \myvec{\myvec{1&0\\0&0}\myvec{1\\1}+\myvec{0\\1}} &= 0\\
+    \implies \vec{m}^\top \myvec{1\\1} &= 0\\
+    \implies \vec{m} &= \myvec{-1\\1}
 \end{align}
 
-Therefore, the locus of $\vec{x}$ is given by
+The normal is obtained as 
 \begin{align}
-    \vec{y}^\top \myvec{0&0\\0&1}\vec{y} = 4\vec{y}
+    \vec{m}^\top (\vec{x}-\vec{q}) &= 0\\
+    \implies \myvec{-1&1}\myvec{\vec{x}-\myvec{1\\1}} &= 0\\
+    \implies \myvec{-1&1}\vec{x} &= 0
 \end{align}
 
-\begin{figure}[h]
+The above results are verified in Fig. \ref{plot}. 
+\begin{figure}
     \centering
     \resizebox{\columnwidth}{!}{\includegraphics{figures/figure.png}}
-    \caption{Plot of the locus}
+    \caption{Plot of the normal}
+    \label{plot}
 \end{figure}
 \end{document}
