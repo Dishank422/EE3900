@@ -144,7 +144,7 @@ https://github.com/Dishank422/EE3900/blob/main/Gate-Assignment2/latex_code.tex
 \section{EC 2019 Q.33}
 The DFT of a vector $\myvec{a & b & c & d}$ is the vector $\myvec{\alpha & \beta & \gamma & \delta}$. Consider the product 
 \begin{equation}
-    \myvec{p & q & r & s} = \myvec{a & b & c & d}\myvec{a & b & c & d\\ d & a & b & c\\ c & d & a & b\\b & c & a & d}
+    \myvec{p & q & r & s} = \myvec{a & b & c & d}\myvec{a & b & c & d\\ d & a & b & c\\ c & d & a & b\\b & c & d &a}
 \end{equation}
 The DFT of the vector $\myvec{p & q & r & s}$ is a scaled version of 
 \begin{enumerate}[label = (\Alph*)]
@@ -155,15 +155,65 @@ The DFT of the vector $\myvec{p & q & r & s}$ is a scaled version of
 \end{enumerate}
 
 \section{Solution}
-We note that $\myvec{p & q & r & s}$ is the circular convolution of $\myvec{a & b & c & d}$ with itself. Therefore 
+\begin{lemma}
+If $\vec{T}$ is a circulant matrix, then the eigenvector matrix of $\vec{T}$ is the same as the DFT matrix $\vec{W}$ and the eigenvalues are the DFT of the first column of $\vec{T}$.
+\end{lemma}
+
+\begin{proof}
+The $i^{th}$ column of the $n\times n$ DFT matrix is given by
 \begin{equation}
-    \myvec{p & q & r & s} = \myvec{a & b & c & d} \circledast \myvec{a & b & c & d}
+    p_i = \dfrac{1}{\sqrt{n}}\myvec{1 \\ \omega^{i} \\ \omega^{2i} \\ : \\ : \\ \omega^{(n-1)i}} 
 \end{equation}
-Therefore, the Fourier transform of $\myvec{p & q & r & s}$ is given by the element-wise product of the Fourier transform of $\myvec{a & b & c & d}$ with itself. Therefore
+where $\omega$ is the $n^{th}$ root of 1. We shall show that this $p_i$ is the eigenvector of $\vec{T}$. Observe that the k$^{th}$ component of $\vec{T}\vec{p}_i$ is given by
+
 \begin{align}
-\mathcal{F}\myvec{p & q & r & s} &= \mathcal{F}\myvec{a & b & c & d} \odot \mathcal{F}\myvec{a & b & c & d}\\
-    &= \myvec{\alpha & \beta & \gamma & \delta} \odot \myvec{\alpha & \beta & \gamma & \delta}\\
-    &= \myvec{\alpha^2 & \beta^2 & \gamma^2 & \delta^2}
+    y_k &= \dfrac{1}{\sqrt{n}}\sum_{j = 0}^{n-1}\vec{T}_{kj} \omega^{ij}\\ 
+    &= \dfrac{\omega^{ki}}{\sqrt{n}}\sum_{j = 0}^{n-1}\vec{T}_{kj}\omega^{(j-k)i}\\
+    &= \dfrac{\omega^{ki}}{\sqrt{n}}\sum_{j = 0}^{n-1}\vec{T}_{(j-k)mod(n)1}\omega^{(j-k)i}\\
+    &= \dfrac{\omega^{ki}}{\sqrt{n}}\sum_{m = 0}^{n-1}\vec{T}_{m1}\omega^{mi}
+\end{align}
+
+Therefore 
+\begin{equation}
+    \vec{T}\vec{p}_i = \dfrac{\sum_{m = 0}^{n-1}\vec{T}_{m1}\omega^{mi}}{\sqrt{n}}\myvec{1 \\ \omega^{i} \\ \omega^{2i} \\ : \\ : \\ \omega^{(n-1)i}}
+\end{equation}
+
+But $\sum_{m = 0}^{n-1}\vec{T}_{m1}\omega^{mi}$ is nothing but the i$^{th}$ element of the DFT of the first column of $\vec{T}$. Therefore $\vec{p}_i$ is an eigenvector of $\vec{T}$ with eigenvalue as i$^{th}$ element of the DFT of the first column of $\vec{T}$.
+\end{proof}
+ 
+Now we start with the solution. First we express the equations in a more convenient form.
+\begin{align}
+    \myvec{p & q & r & s} &= \myvec{a & b & c & d}\myvec{a & b & c & d\\ d & a & b & c\\ c & d & a & b\\b & c & d & a}\\
+    \implies \myvec{p & q & r & s}^\top &= \myvec{a & b & c & d\\ d & a & b & c\\ c & d & a & b\\b & c & d & a}^\top \myvec{a & b & c & d}^\top
+\end{align}
+\begin{equation}
+    \implies \myvec{p \\ q \\ r \\ s} = \myvec{a & d & c & b\\ b & a & d & c\\ c & b & a & d\\d & c & b & a}\myvec{a \\ b \\ c \\ d}
+\end{equation}
+
+\begin{align}
+    Let\; \vec{x} = &\myvec{a \\ b \\ c \\ d};\; \vec{X} = \myvec{\alpha \\ \beta \\ \gamma \\ \delta};\; \vec{y} = \myvec{p \\ q \\ r \\ s}\\
+    &\vec{T} = \myvec{a & d & c & b\\ b & a & d & c\\ c & b & a & d\\d & c & b & a}
+\end{align}
+Then we have to find $\vec{Y}$ the DFT of $\vec{y}$. We know
+\begin{align}
+    &\vec{X} = \vec{W}\vec{x}\\
+    \implies &\vec{x} = \vec{W}^{-1} \vec{X}\\
+    &\vec{y} = \vec{T}\vec{x}\\
+    &\vec{Y} = \vec{W}\vec{y}\\
+    \implies &\vec{Y} = \vec{W}\vec{T}\vec{x}\\
+    \implies &\vec{Y} = \vec{W}\vec{T}\vec{W}^{-1}\vec{X}
+\end{align}
+
+But $\vec{T}$ is a circulant matrix with first column as $\myvec{a \\ b \\ c \\ d}$. Therefore the eigenvalues are $\myvec{\alpha \\ \beta \\ \gamma \\ \delta}$. Using eigen decomposition
+\begin{align}
+    \vec{T} = \vec{W}&\myvec{\alpha & 0 & 0 & 0\\ 0 & \beta & 0 & 0\\ 0 & 0 & \gamma & 0\\ 0 & 0 & 0 & \delta} \vec{W}^{-1}\\
+    \implies \vec{Y} = \vec{W}\vec{W}&\myvec{\alpha & 0 & 0 & 0\\ 0 & \beta & 0 & 0\\ 0 & 0 & \gamma & 0\\ 0 & 0 & 0 & \delta} \vec{W}^{-1}\vec{W}^{-1}\vec{X}
+\end{align}
+Using properties of DFT
+\begin{align}
+    \vec{W}\vec{W} &= \vec{I};\; \vec{W}^{-1}\vec{W}^{-1} = \vec{I}\\
+    \implies \vec{Y} &= \myvec{\alpha & 0 & 0 & 0\\ 0 & \beta & 0 & 0\\ 0 & 0 & \gamma & 0\\ 0 & 0 & 0 & \delta} \vec{X}\\
+    \implies \vec{Y} &= \myvec{\alpha^2 \\ \beta^2 \\ \gamma^2 \\ \delta^2}
 \end{align}
 Therefore option (A) is the correct option.
 \end{document}
