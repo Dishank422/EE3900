@@ -186,7 +186,7 @@ with ROC $\abs{z} < \frac{6}{5}$. We shall call this ROC$_2$. The ROC of the giv
 
 The Z-transform of the given sequence is 
 \begin{align}
-&\dfrac{1}{1-\dfrac{5}{6}z^{-1}}+\dfrac{1}{1-\dfrac{6}{5}z^{-1}}\\ 
+&\dfrac{1}{1-\dfrac{5}{6}z^{-1}}+\dfrac{1}{1-\dfrac{6}{5}z^{-1}}\label{z}\\ 
 = &\dfrac{2-\dfrac{61}{30}z^{-1}}{\left(1-\dfrac{5}{6}z^{-1}\right)\left(1-\dfrac{6}{5}z^{-1}\right)}
 \end{align}
 Therefore the poles of the Z-transform are given by 
@@ -219,5 +219,18 @@ A causal system is stable if and only if all the poles of the Z-transform of the
     \resizebox{\columnwidth}{!}{\includegraphics{figures/plot.png}}
     \caption{Pole-zero plot of the system}
     \label{plot}
+\end{figure}
+
+The DTFT of the sequence can be found by substituting $z = e^{j\omega}$ in \ref{z} as 
+\begin{equation}
+    \vec{H}(e^{j\omega}) = \dfrac{1}{1-\dfrac{5}{6}e^{-j\omega}}+\dfrac{1}{1-\dfrac{6}{5}e^{-j\omega}}
+\end{equation}
+
+The plot of magnitude of this DTFT is given in figure \ref{DTFT}. From this plot, we can observe that the given filter is a high-pass filter.
+\begin{figure}
+    \centering
+    \resizebox{\columnwidth}{!}{\includegraphics{figures/DTFT.png}}
+    \caption{DTFT of the filter}
+    \label{DTFT}
 \end{figure}
 \end{document}
