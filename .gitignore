@@ -1,7 +1,3 @@
 Pipfile
 Pipfile.lock
-Gate_Assignment3/Sound_Noise.wav
-Gate_Assignment3/Sound_Filtered.wav
-Gate_Assignment3/codes/filter.py
-Gate_Assignment3/codes/phase.py
 Gate_Assignment3/codes/similarity.py
