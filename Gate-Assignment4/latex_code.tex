@@ -139,63 +139,63 @@ https://github.com/Dishank422/EE3900/blob/main/Gate-Assignment4/latex_code.tex
 The Fourier representation of an impulse train represented by $s(t) = \sum_{n=-\infty}^{\infty}\delta(t-nT_0)$ is given by
 \begin{enumerate}[label=(\alph*)]
 \setlength\itemsep{0.5em}
-    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(-\frac{j2\pi nt}{T_0}\right)$
-    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(-\frac{j\pi nt}{T_0}\right)$
-    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(\frac{j\pi nt}{T_0}\right)$
-    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(\frac{j2\pi nt}{T_0}\right)$
+    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{-\frac{j2\pi nt}{T_0}}$
+    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{-\frac{j\pi nt}{T_0}}$
+    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{\frac{j\pi nt}{T_0}}$
+    \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{\frac{j2\pi nt}{T_0}}$
 \end{enumerate}
 
 \section{Solution}
 \begin{lemma}
 Any periodic signal x(t) with period $T_0$ can be written as 
 \begin{equation}
-    x(t) = \sum_{n=-\infty}^{\infty} a_n \exp \left(\dfrac{j2\pi nt}{T_0}\right)\label{analysis}
+    x(t) = \sum_{n=-\infty}^{\infty} a_n \exp \brak{\dfrac{j2\pi nt}{T_0}}\label{analysis}
 \end{equation}
 where, $a_n$ is given by
 \begin{equation}
-    a_n = \dfrac{1}{T_0}\int_{T_0}x(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\label{synthesis}
+    a_n = \dfrac{1}{T_0}\int_{T_0}x(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\label{synthesis}
 \end{equation}
 \end{lemma}
 \begin{proof}
 We shall verify equation \ref{synthesis}. 
 \begin{align}
-    a_n &= \dfrac{1}{T_0}\int_{T_0}x(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
-        &= \dfrac{1}{T_0}\int_{T_0}\left(\sum_{m=-\infty}^{\infty} a_m \exp \left(\dfrac{j2\pi mt}{T_0}\right)\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
-        &= \dfrac{1}{T_0}\sum_{m=-\infty}^{\infty}\int_{T_0}a_m \left(\exp \dfrac{j2\pi mt}{T_0}\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\label{an}
+    a_n &= \dfrac{1}{T_0}\int_{T_0}x(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
+        &= \dfrac{1}{T_0}\int_{T_0}\brak{\sum_{m=-\infty}^{\infty} a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
+        &= \dfrac{1}{T_0}\sum_{m=-\infty}^{\infty}\int_{T_0}a_m \brak{\exp \dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\label{an}
 \end{align}
 When $m = n$,
 \begin{align}
-    \int_{T_0}a_m \exp \left(\dfrac{j2\pi mt}{T_0}\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt &= \int_{T_0} a_n\\
+    \int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt &= \int_{T_0} a_n\\
     &= T_0 a_n
 \end{align}
 When $m \ne n$,
 \begin{align}
-    &\int_{T_0}a_m \exp \left(\dfrac{j2\pi mt}{T_0}\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\ 
-    &= a_m\int_{T_0}\exp \left(\dfrac{j2\pi (m-n)t}{T_0}\right) dt
+    &\int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\ 
+    &= a_m\int_{T_0}\exp \brak{\dfrac{j2\pi (m-n)t}{T_0}} dt
 \end{align}
-Since $\exp \left(\frac{j2\pi (m-n)t}{T_0}\right)$ is periodic with period $\frac{T_0}{m-n}$, it's integral over any time interval of length $\frac{T_0}{m-n}$ or any integral multiple of $\frac{T_0}{m-n}$ will be 0. Therefore, when $m \ne n$,
+Since $\exp \brak{\frac{j2\pi (m-n)t}{T_0}}$ is periodic with period $\frac{T_0}{m-n}$, it's integral over any time interval of length $\frac{T_0}{m-n}$ or any integral multiple of $\frac{T_0}{m-n}$ will be 0. Therefore, when $m \ne n$,
 \begin{equation}
-    \int_{T_0}a_m \exp \left(\dfrac{j2\pi mt}{T_0}\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt = 0
+    \int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt = 0
 \end{equation}
 Continuing from equation \ref{an},
 \begin{align}
-    a_n &=  \dfrac{1}{T_0}\sum_{m=-\infty}^{\infty}\int_{T_0}a_m \exp \left(\dfrac{j2\pi mt}{T_0}\right)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
+    a_n &=  \dfrac{1}{T_0}\sum_{m=-\infty}^{\infty}\int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
     &= \dfrac{1}{T_0}(T_0a_n) = a_n
 \end{align}
 \end{proof}
 We observe that $s(t)$ is periodic with period $T_0$. Thus it's Fourier representation as a sum of complex exponents is given by
 \begin{equation}
-    s(t) = \sum_{n=-\infty}^{\infty}a_n\exp\left(\dfrac{j2\pi nt}{T_0}\right)
+    s(t) = \sum_{n=-\infty}^{\infty}a_n\exp\brak{\dfrac{j2\pi nt}{T_0}}
 \end{equation}
 where, $a_n$ can be calculated as
 \begin{equation}
-    a_n = \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}s(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt
+    a_n = \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}s(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt
 \end{equation}
 Between $-\dfrac{T_0}{2}$ and $\dfrac{T_0}{2}$, we can say that $s(t) = \delta(t)$.
 \begin{align}
-    \implies a_n &= \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}\delta(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
+    \implies a_n &= \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}\delta(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
         &= \dfrac{1}{T_0}\\
-    \implies s(t) &= \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(\dfrac{j2\pi nt}{T_0}\right)
+    \implies s(t) &= \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{\dfrac{j2\pi nt}{T_0}}
 \end{align}
 Therefore option (d) is the correct option.
 %\begin{figure}

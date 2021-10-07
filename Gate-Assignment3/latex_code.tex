@@ -142,7 +142,7 @@ https://github.com/Dishank422/EE3900/blob/main/Gate-Assignment3/latex_code.tex
 \end{lstlisting}
 %
 \section{EC 2005 Q.6}
-The region of convergence of Z-transform of the sequence $\left(\dfrac{5}{6}\right)^nu(n) -\left(\dfrac{6}{5}\right)^nu(-n-1)$ must be
+The region of convergence of Z-transform of the sequence $\brak{\dfrac{5}{6}}^nu(n) -\brak{\dfrac{6}{5}}^nu(-n-1)$ must be
 \begin{enumerate}[label = (\Alph*)]
 \setlength\itemsep{0.7em}
     \item $\abs{Z} < \dfrac{5}{6}$
@@ -173,13 +173,13 @@ ROC is given by $\abs{\dfrac{z}{a}} < 1$, i.e. $\abs{z} < \abs{a}$.
 \end{proof}
 Therefore,
 \begin{equation}
-    \mathcal{Z}\left(\left(\dfrac{5}{6}\right)^nu(n)\right) = \dfrac{1}{1-\dfrac{5}{6}z^{-1}}
+    \mathcal{Z}\brak{\brak{\dfrac{5}{6}}^nu(n)} = \dfrac{1}{1-\dfrac{5}{6}z^{-1}}
 \end{equation}
 with ROC $\abs{z} > \frac{5}{6}$. We shall call this ROC$_1$.
 
 Moving ahead,
 \begin{align}
-    \mathcal{Z}\left(\left(\dfrac{6}{5}\right)^nu(-n-1)\right) &= z\left(\dfrac{6}{5}\right)^{-1}\mathcal{Z}\left(\left(\dfrac{6}{5}\right)^nu(-n)\right)\\
+    \mathcal{Z}\brak{\brak{\dfrac{6}{5}}^nu(-n-1)} &= z\brak{\dfrac{6}{5}}^{-1}\mathcal{Z}\brak{\brak{\dfrac{6}{5}}^nu(-n)}\\
     &= \dfrac{1}{\dfrac{6}{5}z^{-1}-1}
 \end{align}
 with ROC $\abs{z} < \frac{6}{5}$. We shall call this ROC$_2$. The ROC of the given expression will be the intersection of ROC$_1$ and ROC$_2$. Therefore, the ROC of the given sequence is $\dfrac{5}{6} < \abs{z} < \dfrac{6}{5}$. Therefore, option (C) is the correct option.
@@ -187,7 +187,7 @@ with ROC $\abs{z} < \frac{6}{5}$. We shall call this ROC$_2$. The ROC of the giv
 The Z-transform of the given sequence is 
 \begin{align}
 &\dfrac{1}{1-\dfrac{5}{6}z^{-1}}+\dfrac{1}{1-\dfrac{6}{5}z^{-1}}\label{z}\\ 
-= &\dfrac{2-\dfrac{61}{30}z^{-1}}{\left(1-\dfrac{5}{6}z^{-1}\right)\left(1-\dfrac{6}{5}z^{-1}\right)}
+= &\dfrac{2-\dfrac{61}{30}z^{-1}}{\brak{1-\dfrac{5}{6}z^{-1}}\brak{1-\dfrac{6}{5}z^{-1}}}
 \end{align}
 Therefore the poles of the Z-transform are given by 
 \begin{equation}
