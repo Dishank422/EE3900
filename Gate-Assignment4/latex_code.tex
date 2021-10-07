@@ -195,9 +195,27 @@ Between $-\dfrac{T_0}{2}$ and $\dfrac{T_0}{2}$, we can say that $s(t) = \delta(t
 \begin{align}
     \implies a_n &= \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}\delta(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
         &= \dfrac{1}{T_0}\\
-    \implies s(t) &= \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{\dfrac{j2\pi nt}{T_0}}
+    \implies s(t) &= \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\brak{\dfrac{j2\pi nt}{T_0}}\label{series}
 \end{align}
 Therefore option (d) is the correct option.
+\begin{lemma}
+The Fourier transform of $\exp \brak{j\omega_0t}$ is $2\pi \delta(\omega-\omega_0)$.
+\end{lemma}
+\begin{proof}
+We verify the lemma by finding the inverse Fourier transform of $2\pi \delta(\omega-\omega_0)$.
+\begin{align}
+    \dfrac{1}{2\pi}\int_{-\infty}^{\infty}2\pi \delta(\omega-\omega_0)\exp \brak{j\omega t}d\omega = \exp \brak{j\omega_0 t}
+\end{align}
+\end{proof}
+Let $S(\omega)$ be the Fourier transform of s(t). Then using the above lemma and equation \ref{series}
+\begin{equation}
+    S(\omega) = \dfrac{2\pi}{T_0}\sum_{n=-\infty}^{\infty}\delta\brak{\omega-\dfrac{2\pi n}{T_0}}
+\end{equation}
+We can also write the above by substituting $\omega_0 = \frac{2\pi}{T_0}$ as
+\begin{equation}
+    S(\omega) = \sum_{n=-\infty}^{\infty}\omega_0\delta\brak{\omega-n\omega_0}
+\end{equation}
+Thus we can observe that the Fourier transform of an impulse train is an impulse train in the frequency domain.
 %\begin{figure}
 %    \centering
 %    \resizebox{\columnwidth}{!}{\includegraphics{figures/DTFT.png}}
