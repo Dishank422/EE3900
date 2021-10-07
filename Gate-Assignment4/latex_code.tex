@@ -136,7 +136,7 @@ https://github.com/Dishank422/EE3900/blob/main/Gate-Assignment4/latex_code.tex
 \end{lstlisting}
 %
 \section{EC 1999 Q.2.1}
-The Fourier representation of an impulse train represented by $s(t) = \sum_{n=-\infty}^{\infty}d(t-nT_0)$ is given by
+The Fourier representation of an impulse train represented by $s(t) = \sum_{n=-\infty}^{\infty}\delta(t-nT_0)$ is given by
 \begin{enumerate}[label=(\alph*)]
 \setlength\itemsep{0.5em}
     \item $\frac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(-\frac{j2\pi nt}{T_0}\right)$
@@ -191,9 +191,9 @@ where, $a_n$ can be calculated as
 \begin{equation}
     a_n = \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}s(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt
 \end{equation}
-Between $-\dfrac{T_0}{2}$ and $\dfrac{T_0}{2}$, we can say that $s(t) = d(t)$.
+Between $-\dfrac{T_0}{2}$ and $\dfrac{T_0}{2}$, we can say that $s(t) = \delta(t)$.
 \begin{align}
-    \implies a_n &= \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}d(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
+    \implies a_n &= \dfrac{1}{T_0}\int_{-\frac{T_0}{2}}^{\frac{T_0}{2}}\delta(t)\exp\left(-\dfrac{j2\pi nt}{T_0}\right)dt\\
         &= \dfrac{1}{T_0}\\
     \implies s(t) &= \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\exp\left(\dfrac{j2\pi nt}{T_0}\right)
 \end{align}
