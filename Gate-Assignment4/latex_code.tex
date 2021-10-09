@@ -199,21 +199,21 @@ Between $-\dfrac{T_0}{2}$ and $\dfrac{T_0}{2}$, we can say that $s(t) = \delta(t
 \end{align}
 Therefore option (d) is the correct option.
 \begin{lemma}
-The Fourier transform of $\exp \brak{j2\pi f_0t}$ is $2\pi \delta(f-f_0)$.
+The Fourier transform of $\exp \brak{j2\pi f_0t}$ is $\delta(f-f_0)$.
 \end{lemma}
 \begin{proof}
-We verify the lemma by finding the inverse Fourier transform of $2\pi \delta(f-f_0)$.
+We verify the lemma by finding the inverse Fourier transform of $\delta(f-f_0)$.
 \begin{align}
-    \dfrac{1}{2\pi}\int_{-\infty}^{\infty}2\pi \delta(f-f_0)\exp \brak{j2\pi f t}df = \exp \brak{j2\pi f_0 t}
+    \int_{-\infty}^{\infty}\delta(f-f_0)\exp \brak{j2\pi f t}df = \exp \brak{j2\pi f_0 t}
 \end{align}
 \end{proof}
 Let $S(f)$ be the Fourier transform of s(t). Then using the above lemma and equation \ref{series}
 \begin{equation}
-    S(f) = \dfrac{2\pi}{T_0}\sum_{n=-\infty}^{\infty}\delta\brak{f-\dfrac{n}{T_0}}
+    S(f) = \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\delta\brak{f-\dfrac{n}{T_0}}
 \end{equation}
 We can also write the above by substituting $\omega_0 = \dfrac{1}{T_0}$ as
 \begin{equation}
-    S(f) = \sum_{n=-\infty}^{\infty}2\pi f_0\delta\brak{f-nf_0}
+    S(f) = \sum_{n=-\infty}^{\infty}f_0\delta\brak{f-nf_0}
 \end{equation}
 Thus we can observe that the Fourier transform of an impulse train is an impulse train in the frequency domain.
 %\begin{figure}
