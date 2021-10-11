@@ -157,7 +157,7 @@ where, $a_n$ is given by
 \end{equation}
 \end{lemma}
 \begin{proof}
-We shall verify equation \ref{synthesis}. 
+We shall verify equation \eqref{synthesis}. 
 \begin{align}
     a_n &= \dfrac{1}{T_0}\int_{T_0}x(t)\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
         &= \dfrac{1}{T_0}\int_{T_0}\brak{\sum_{m=-\infty}^{\infty} a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
@@ -177,7 +177,7 @@ Since $\exp \brak{\frac{j2\pi (m-n)t}{T_0}}$ is periodic with period $\frac{T_0}
 \begin{equation}
     \int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt = 0
 \end{equation}
-Continuing from equation \ref{an},
+Continuing from equation \eqref{an},
 \begin{align}
     a_n &=  \dfrac{1}{T_0}\sum_{m=-\infty}^{\infty}\int_{T_0}a_m \exp \brak{\dfrac{j2\pi mt}{T_0}}\exp\brak{-\dfrac{j2\pi nt}{T_0}}dt\\
     &= \dfrac{1}{T_0}(T_0a_n) = a_n
@@ -207,11 +207,11 @@ We verify the lemma by finding the inverse Fourier transform of $\delta(f-f_0)$.
     \int_{-\infty}^{\infty}\delta(f-f_0)\exp \brak{j2\pi f t}df = \exp \brak{j2\pi f_0 t}
 \end{align}
 \end{proof}
-Let $S(f)$ be the Fourier transform of s(t). Then using the above lemma and equation \ref{series}
+Let $S(f)$ be the Fourier transform of s(t). Then using the above lemma and equation \eqref{series}
 \begin{equation}
-    S(f) = \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\delta\brak{f-\dfrac{n}{T_0}}
+    S(f) = \dfrac{1}{T_0}\sum_{n=-\infty}^{\infty}\delta\brak{f-\dfrac{n}{T_0}}\label{T_0}
 \end{equation}
-We can also write the above by substituting $f_0 = \dfrac{1}{T_0}$ as
+We can also write equation \eqref{T_0} by substituting $f_0 = \dfrac{1}{T_0}$ as
 \begin{equation}
     S(f) = \sum_{n=-\infty}^{\infty}f_0\delta\brak{f-nf_0}
 \end{equation}
