@@ -145,17 +145,35 @@ https://github.com/Dishank422/EE3900/blob/main/quiz1/latex_code.tex
 Determine if $x[n] = ne^{j\pi n}$ is periodic. If it is periodic, determine it's period.
 
 \section{Solution}
-No, the signal is not periodic. Note that the amplitude of the signal is n. Hence the amplitude is growing in time. If the  signal is periodic, then it must have the same amplitude and phase after some time interval. Since the amplitude is monotonically increasing, the amplitude cannot be same at any later instant in time. Hence the signal is not periodic.
+\begin{definition}
+A signal x[n] is said to be periodic if for all n, for some $n_0 > 0$, it satisfies 
+\begin{equation}
+    x[n+n_0] = x[n]
+\end{equation}
+\end{definition}
+Suppose $ne^{j\pi n}$ is periodic, then for some $n_0 > 0$, 
+\begin{align}
+    ne^{j\pi n} &= (n+n_0)e^{j\pi (n+n_0)}\\
+    \implies \abs{ne^{j\pi n}} &= \abs{(n+n_0)e^{j\pi (n+n_0)}}\\
+    \implies \abs{n} &= \abs{n+n_0}
+\end{align}
+Let n be positive. 
+\begin{align}
+    \implies n &= n+n_0\\
+    \implies n_0 &= 0
+\end{align}
+This contradicts the assumption: $n_0 > 0$. Thus $ne^{j\pi n}$ is not periodic. The same can easily be seen from figure \ref{amp}.
+
 \begin{figure}[h]
     \centering
     \resizebox{\columnwidth}{!}{\includegraphics{figures/amp.png}}
     \caption{Amplitude of x[n]}
-    \label{DTFT}
+    \label{amp}
 \end{figure}
+
 \begin{figure}[h]
     \centering
     \resizebox{\columnwidth}{!}{\includegraphics{figures/phase.png}}
     \caption{Phase of x[n]}
-    \label{DTFT}
 \end{figure}
 \end{document}
