@@ -8,6 +8,7 @@ void setup() {
 void loop() {
 	if(Serial.available()){
 		num = Serial.read();
-		Serial.write(num+1);  
+		delay(20);
+		Serial.println(num+1);  
 	}
 }
