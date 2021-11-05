@@ -1,7 +1,7 @@
 import soundfile as sf
 from scipy import signal
 
-input_signal, fs = sf.read('Sound_Noise.wav')
+input_signal, fs = sf.read('input.wav')
 
 sampl_freq = fs
 
