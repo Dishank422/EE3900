@@ -9,7 +9,7 @@ n_samples = len(input_signal)
 output_signal = np.zeros(n_samples)
 
 output_signal[0] = 0.00345416*input_signal[0]
-output_signal[1] = 0.00345416*input_signal[1] + 0.01381663*input_signal[0] + 2.5194645*output_signal[0]
+output_signal[1] = 0.00345416*input_signal[1] + 0.01381663*input_signal[0]x + 2.5194645*output_signal[0]
 output_signal[2] = 0.00345416*input_signal[2] + 0.01381663*input_signal[1] + 0.02072494*input_signal[0] + 2.5194645*output_signal[1] - 2.56083711*output_signal[0]
 output_signal[3] = 0.00345416*input_signal[3] + 0.01381663*input_signal[2] + 0.02072494*input_signal[1] + 0.01381663*input_signal[0] + 2.5194645*output_signal[2] - 2.56083711*output_signal[1] + 1.20623537*output_signal[0]
 
